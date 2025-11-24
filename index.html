@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PÜR OTO LASTİK YOL YARDIM</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>PÜR OTO LASTİK YOL YARDIM</h1>
+
+<header class="navbar">
+  <div class="logo">PÜR OTO LASTİK</div>
   <nav>
     <a href="#hizmetler">Hizmetler</a>
     <a href="#galeri">Galeri</a>
@@ -17,43 +18,49 @@
   </nav>
 </header>
 
-<section id="hero">
-  <h2>7/24 Lastik Yol Yardım • Antalya</h2>
-  <p>Hızlı, güvenilir ve profesyonel hizmet.</p>
-  <a class="call-btn" href="tel:+905307985540">Hemen Ara: +90 530 798 55 40</a>
+<section class="hero">
+  <div class="overlay"></div>
+  <h1>7/24 Yol Yardım ve Lastik Değişimi</h1>
+  <p>Antalya • Muharrem PÜR</p>
+  <a href="tel:+905307985540" class="call-btn">📞 Hemen Ara</a>
+  <a href="https://wa.me/905307985540" class="wp-btn">💬 WhatsApp</a>
 </section>
 
-<section id="hizmetler">
-  <h2>Hizmetler</h2>
-  <ul>
-    <li>🔧 Yerinde Lastik Değişimi</li>
-    <li>🚗 Lastik Tamiri</li>
-    <li>⚡ Acil Yol Yardım</li>
-    <li>📍 Antalya Geneli Hizmet</li>
-  </ul>
+<section id="hizmetler" class="section">
+  <h2>Hizmetlerimiz</h2>
+  <div class="cards">
+    <div class="card"><div class="img"></div><h3>Yerinde Lastik Değişimi</h3></div>
+    <div class="card"><div class="img"></div><h3>Acil Yol Yardım</h3></div>
+    <div class="card"><div class="img"></div><h3>Lastik Tamiri</h3></div>
+  </div>
 </section>
 
-<section id="galeri">
+<section id="galeri" class="section">
   <h2>Galeri</h2>
-  <p>Fotoğraflar buraya eklenebilir.</p>
+  <div class="slider" id="slider">
+    <div class="track">
+      <img src="images/hero.png">
+      <img src="images/hero.png">
+      <img src="images/hero.png">
+    </div>
+  </div>
 </section>
 
-<section id="yorumlar">
+<section id="yorumlar" class="section">
   <h2>Müşteri Yorumları</h2>
-  <form id="yorumForm">
-    <input type="text" id="ad" placeholder="Adınız" required />
-    <textarea id="yorum" placeholder="Yorumunuz" required></textarea>
-    <button type="submit">Yorumu Gönder</button>
+  <div id="yorumListesi" class="yorum-listesi"></div>
+  <form id="yorumForm" class="yorum-form">
+    <input id="ad" placeholder="Adınız">
+    <textarea id="yorum" placeholder="Yorumunuz"></textarea>
+    <button type="submit">Gönder</button>
   </form>
-
-  <div id="yorumListesi"></div>
 </section>
 
-<section id="iletisim">
+<section id="iletisim" class="section">
   <h2>İletişim</h2>
   <p><strong>İsim:</strong> Muharrem PÜR</p>
-  <p><strong>Telefon:</strong> <a href="tel:+905307985540">+90 530 798 55 40</a></p>
-  <p><strong>Şehir:</strong> Antalya</p>
+  <p><strong>Telefon:</strong> 90 530 798 55 40</p>
+  <p><strong>Konum:</strong> Antalya</p>
 </section>
 
 <script src="script.js"></script>
