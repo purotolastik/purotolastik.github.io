@@ -2,39 +2,59 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Oto Lastik Yol Yardım</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PÜR OTO LASTİK YOL YARDIM</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
-  <h1>7/24 Oto Lastik Yol Yardım</h1>
-  <a class="call-btn" href="tel:+905555555555">Hemen Ara</a>
-  <a class="wa-btn" href="https://wa.me/905555555555?text=Merhaba%20yardım%20lazım">WhatsApp</a>
+  <h1>PÜR OTO LASTİK YOL YARDIM</h1>
+  <nav>
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#yorumlar">Yorumlar</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
 </header>
 
-<section class="slider-container">
-  <div class="slider" id="slider">
-    <!-- Slider images -->
-    <img src="https://picsum.photos/seed/1/1200/700" class="slide" />
-    <img src="https://picsum.photos/seed/2/1200/700" class="slide" />
-    <img src="https://picsum.photos/seed/3/1200/700" class="slide" />
-    <img src="https://picsum.photos/seed/4/1200/700" class="slide" />
-  </div>
-  <button class="nav prev" onclick="prevSlide()">&#10094;</button>
-  <button class="nav next" onclick="nextSlide()">&#10095;</button>
+<section id="hero">
+  <h2>7/24 Lastik Yol Yardım • Antalya</h2>
+  <p>Hızlı, güvenilir ve profesyonel hizmet.</p>
+  <a class="call-btn" href="tel:+905307985540">Hemen Ara: +90 530 798 55 40</a>
 </section>
 
-<h2 style="text-align:center; margin-top:40px;">Çalışma Fotoğrafları</h2>
-<div class="gallery">
-  <!-- Lightbox gallery -->
-  <a href="https://picsum.photos/seed/a1/1200/900" class="lightbox"><img src="https://picsum.photos/seed/a1/400/300"/></a>
-  <a href="https://picsum.photos/seed/a2/1200/900" class="lightbox"><img src="https://picsum.photos/seed/a2/400/300"/></a>
-  <a href="https://picsum.photos/seed/a3/1200/900" class="lightbox"><img src="https://picsum.photos/seed/a3/400/300"/></a>
-  <a href="https://picsum.photos/seed/a4/1200/900" class="lightbox"><img src="https://picsum.photos/seed/a4/400/300"/></a>
-  <a href="https://picsum.photos/seed/a5/1200/900" class="lightbox"><img src="https://picsum.photos/seed/a5/400/300"/></a>
-  <a href="https://picsum.photos/seed/a6/1200/900" class="lightbox"><img src="https://picsum.photos/seed/a6/400/300"/></a>
-</div>
+<section id="hizmetler">
+  <h2>Hizmetler</h2>
+  <ul>
+    <li>🔧 Yerinde Lastik Değişimi</li>
+    <li>🚗 Lastik Tamiri</li>
+    <li>⚡ Acil Yol Yardım</li>
+    <li>📍 Antalya Geneli Hizmet</li>
+  </ul>
+</section>
+
+<section id="galeri">
+  <h2>Galeri</h2>
+  <p>Fotoğraflar buraya eklenebilir.</p>
+</section>
+
+<section id="yorumlar">
+  <h2>Müşteri Yorumları</h2>
+  <form id="yorumForm">
+    <input type="text" id="ad" placeholder="Adınız" required />
+    <textarea id="yorum" placeholder="Yorumunuz" required></textarea>
+    <button type="submit">Yorumu Gönder</button>
+  </form>
+
+  <div id="yorumListesi"></div>
+</section>
+
+<section id="iletisim">
+  <h2>İletişim</h2>
+  <p><strong>İsim:</strong> Muharrem PÜR</p>
+  <p><strong>Telefon:</strong> <a href="tel:+905307985540">+90 530 798 55 40</a></p>
+  <p><strong>Şehir:</strong> Antalya</p>
+</section>
 
 <script src="script.js"></script>
 </body>

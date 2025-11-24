@@ -1,21 +1,32 @@
-let index = 0;
-const slider = document.getElementById('slider');
-const slides = document.querySelectorAll('.slide');
 
-function showSlide(i) {
-  index = (i + slides.length) % slides.length;
-  slider.style.transform = `translateX(-${index * 100}%)`;
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("yorumForm");
+  const list = document.getElementById("yorumListesi");
 
-function nextSlide() { showSlide(index + 1); }
-function prevSlide() { showSlide(index - 1); }
+  function loadComments() {
+    list.innerHTML = "";
+    const yorumlar = JSON.parse(localStorage.getItem("yorumlar") || "[]");
+    yorumlar.forEach((y) => {
+      const div = document.createElement("div");
+      div.style.padding = "10px";
+      div.style.borderBottom = "1px solid #ddd";
+      div.innerHTML = `<strong>${y.ad}</strong><p>${y.yorum}</p>`;
+      list.appendChild(div);
+    });
+  }
 
-setInterval(nextSlide, 3500);
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const ad = document.getElementById("ad").value;
+    const yorum = document.getElementById("yorum").value;
 
-let startX = 0;
-slider.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-slider.addEventListener('touchend', e => {
-  let endX = e.changedTouches[0].clientX;
-  if (endX < startX - 50) nextSlide();
-  if (endX > startX + 50) prevSlide();
+    const yorumlar = JSON.parse(localStorage.getItem("yorumlar") || "[]" );
+    yorumlar.push({ ad, yorum });
+    localStorage.setItem("yorumlar", JSON.stringify(yorumlar));
+
+    form.reset();
+    loadComments();
+  });
+
+  loadComments();
 });
