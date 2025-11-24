@@ -1,68 +1,636 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PÜR OTO LASTİK YOL YARDIM</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PÜR Oto Lastik Yol Yardım | Antalya 7/24 Açık Lastikçi</title>
+    <meta name="description" content="Antalya PÜR Oto Lastik Yol Yardım. 7/24 Acil Lastikçi, Yerinde Lastik Değişimi, Akü Takviye. Muharrem PÜR güvencesiyle. Muratpaşa, Kepez, Konyaaltı, Lara, Kundu tüm ilçelere hizmet.">
+    <meta name="keywords" content="antalya lastikçi, antalya yol yardım, pür oto lastik, muharrem pür, kepez lastikçi, muratpaşa lastikçi, konyaaltı lastikçi, 7/24 açık lastikçi, seyyar lastikçi">
+    <meta name="author" content="Muharrem PÜR">
+    
+    <!-- Tailwind CSS (Modern Stil Altyapısı) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome (İkonlar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts (Endüstriyel ve Okunaklı Fontlar) -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config ve Özel Stiller -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316', // Turuncu
+                        primaryDark: '#c2410c',
+                        darkBg: '#0f0f0f',
+                        cardBg: '#18181b',
+                        neonRed: '#ef4444',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Özel Kaydırma Çubuğu */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #18181b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f97316;
+            border-radius: 4px;
+        }
+
+        /* Neon Glow Efektleri */
+        .neon-border {
+            box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
+            transition: all 0.3s ease;
+        }
+        .neon-border:hover {
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
+            border-color: #f97316;
+        }
+
+        /* Lightbox Stili */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80vh;
+            border: 2px solid #f97316;
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+        }
+
+        /* Slider Scroll Snap */
+        .slider-container {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .slide-item {
+            scroll-snap-align: center;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-darkBg text-gray-200 font-sans antialiased overflow-x-hidden">
 
-<header class="navbar">
-  <div class="logo">PÜR OTO LASTİK</div>
-  <nav>
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#galeri">Galeri</a>
-    <a href="#yorumlar">Yorumlar</a>
-    <a href="#iletisim">İletişim</a>
-  </nav>
-</header>
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-truck-monster text-primary text-3xl animate-float"></i>
+                    <div>
+                        <h1 class="font-display text-2xl font-bold text-white tracking-wider">PÜR <span class="text-primary">OTO LASTİK</span></h1>
+                        <p class="text-xs text-gray-400 tracking-widest">YOL YARDIM & MOBİL SERVİS</p>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#hero" class="hover:text-primary transition-colors duration-300 font-bold">ANASAYFA</a>
+                        <a href="#hizmetler" class="hover:text-primary transition-colors duration-300">HİZMETLER</a>
+                        <a href="#galeri" class="hover:text-primary transition-colors duration-300">GALERİ</a>
+                        <a href="#hakkimizda" class="hover:text-primary transition-colors duration-300">HAKKIMIZDA</a>
+                        <a href="#iletisim" class="bg-primary hover:bg-primaryDark text-white px-4 py-2 rounded-md font-bold transition-all shadow-[0_0_15px_rgba(249,115,22,0.4)]">
+                            <i class="fa-solid fa-phone mr-2"></i> İLETİŞİME GEÇ
+                        </a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="text-gray-300 hover:text-white p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#hero" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-lg font-medium border-b border-gray-800">ANASAYFA</a>
+                <a href="#hizmetler" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-lg font-medium border-b border-gray-800">HİZMETLER</a>
+                <a href="#galeri" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-lg font-medium border-b border-gray-800">GALERİ</a>
+                <a href="#hakkimizda" onclick="toggleMenu()" class="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-lg font-medium border-b border-gray-800">KURUMSAL</a>
+                <a href="tel:+905307985540" class="text-white bg-primary block px-3 py-4 rounded-md text-lg font-bold mt-2">
+                    <i class="fa-solid fa-phone-volume animate-pulse"></i> HEMEN ARA
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<section class="hero">
-  <div class="overlay"></div>
-  <h1>7/24 Yol Yardım ve Lastik Değişimi</h1>
-  <p>Antalya • Muharrem PÜR</p>
-  <a href="tel:+905307985540" class="call-btn">📞 Hemen Ara</a>
-  <a href="https://wa.me/905307985540" class="wp-btn">💬 WhatsApp</a>
-</section>
+    <!-- Hero Section -->
+    <section id="hero" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1578844251758-2f71da645217?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Antalya Lastik Yol Yardım Gece Servisi" 
+                 class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-darkBg"></div>
+        </div>
 
-<section id="hizmetler" class="section">
-  <h2>Hizmetlerimiz</h2>
-  <div class="cards">
-    <div class="card"><div class="img"></div><h3>Yerinde Lastik Değişimi</h3></div>
-    <div class="card"><div class="img"></div><h3>Acil Yol Yardım</h3></div>
-    <div class="card"><div class="img"></div><h3>Lastik Tamiri</h3></div>
-  </div>
-</section>
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
+            <div class="inline-block bg-primary/20 border border-primary text-primary px-4 py-1 rounded-full text-sm font-bold mb-6 animate-pulse">
+                <i class="fa-solid fa-bolt"></i> ANTALYA GENELİ 7/24 HİZMET
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+                YOLDA KALMA, <br>
+                <span class="text-primary text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">PÜR OTO LASTİK</span> YANINDA
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Antalya'nın her noktasına 30 dakikada ulaşım garantisi. Profesyonel mobil ekip, yerinde lastik tamiri ve akü takviyesi.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+905307985540" class="group relative px-8 py-4 bg-neonRed hover:bg-red-700 text-white font-bold text-xl rounded-lg shadow-[0_0_20px_rgba(239,68,68,0.5)] transition-all transform hover:-translate-y-1">
+                    <span class="absolute top-0 right-0 -mt-2 -mr-2 w-6 h-6 bg-yellow-400 rounded-full animate-ping"></span>
+                    <i class="fa-solid fa-phone-volume mr-2 group-hover:rotate-12 transition-transform"></i> ACİL YOL YARDIM
+                </a>
+                <a href="https://wa.me/905307985540?text=Merhaba,%20yolda%20kaldım%20konum%20atıyorum." target="_blank" class="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold text-xl rounded-lg shadow-lg transition-all transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> WHATSAPP KONUM AT
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-400">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
 
-<section id="galeri" class="section">
-  <h2>Galeri</h2>
-  <div class="slider" id="slider">
-    <div class="track">
-      <img src="images/hero.png">
-      <img src="images/hero.png">
-      <img src="images/hero.png">
+    <!-- Hizmetler (Cards) -->
+    <section id="hizmetler" class="py-20 bg-darkBg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-primary font-bold tracking-wider uppercase mb-2">HİZMETLERİMİZ</h2>
+                <h3 class="text-4xl md:text-5xl font-display font-bold text-white">PROFESYONEL ÇÖZÜMLER</h3>
+                <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden group hover:shadow-[0_0_30px_rgba(249,115,22,0.2)] transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1626074278453-6258d4a6df24?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Yerinde Lastik Tamiri" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-primary text-white p-3 rounded-full shadow-lg z-10">
+                            <i class="fa-solid fa-wrench text-xl"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Yerinde Lastik Tamiri</h4>
+                        <p class="text-gray-400">Lastiğiniz mi patladı? Stepne ile uğraşmayın. Mobil aracımızla konumunuza gelip yerinde tamir veya değişim yapıyoruz.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden group hover:shadow-[0_0_30px_rgba(249,115,22,0.2)] transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1000&auto=format&fit=crop" 
+                             alt="7/24 Yol Yardım" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-neonRed text-white p-3 rounded-full shadow-lg z-10 animate-pulse">
+                            <i class="fa-solid fa-truck-pickup text-xl"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">7/24 Yol Yardım</h4>
+                        <p class="text-gray-400">Antalya'nın tüm ilçelerinde gece gündüz demeden yolda kalan araçlar için acil müdahale ekibimiz hazırdır.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden group hover:shadow-[0_0_30px_rgba(249,115,22,0.2)] transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1632823469850-24d9c4939b67?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Sıfır ve İkinci El Lastik" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-primary text-white p-3 rounded-full shadow-lg z-10">
+                            <i class="fa-solid fa-rotate text-xl"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Lastik Değişimi & Satış</h4>
+                        <p class="text-gray-400">Her bütçeye uygun sıfır ve çıkma lastik çeşitleri. Yazlık-Kışlık lastik değişimi ve balans ayarı hizmeti.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Özel Yol Yardım Banner (Divider) -->
+    <section class="py-16 bg-gradient-to-r from-gray-900 to-black relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background-image: repeating-linear-gradient(45deg, #000, #000 10px, #f97316 10px, #f97316 20px);"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between">
+            <div class="text-center md:text-left mb-8 md:mb-0">
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-2">ACİL DURUM MU?</h2>
+                <p class="text-gray-300 text-lg">Konumunuzu WhatsApp üzerinden gönderin, ekibimiz hemen yola çıksın.</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="tel:+905307985540" class="flex items-center justify-center w-20 h-20 bg-white rounded-full text-black hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.4)]">
+                    <i class="fa-solid fa-phone text-3xl"></i>
+                </a>
+                <a href="https://wa.me/905307985540" target="_blank" class="flex items-center justify-center w-20 h-20 bg-green-500 rounded-full text-white hover:bg-green-600 transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)]">
+                    <i class="fa-brands fa-whatsapp text-4xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider Galeri -->
+    <section id="slider-bolumu" class="py-16 bg-darkBg">
+        <div class="max-w-full mx-auto">
+            <div class="text-center mb-10 px-4">
+                <h3 class="text-3xl font-display font-bold text-white">SAHADAN GÖRÜNTÜLER</h3>
+                <p class="text-gray-400">Müşterilerimizin araçlarına uyguladığımız işlemler</p>
+            </div>
+            
+            <!-- Slider Wrapper -->
+            <div class="relative group max-w-7xl mx-auto">
+                <!-- Buttons -->
+                <button onclick="scrollSlider(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-primary text-white p-4 rounded-full backdrop-blur-sm transition-all hidden md:block">
+                    <i class="fa-solid fa-chevron-left text-xl"></i>
+                </button>
+                <button onclick="scrollSlider(1)" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-primary text-white p-4 rounded-full backdrop-blur-sm transition-all hidden md:block">
+                    <i class="fa-solid fa-chevron-right text-xl"></i>
+                </button>
+
+                <!-- Scrollable Container -->
+                <div id="image-slider" class="slider-container flex gap-4 overflow-x-auto px-4 pb-8 snap-x snap-mandatory hide-scrollbar">
+                    
+                    <!-- Slide 1 -->
+                    <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Lastik Değişimi">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="text-white font-bold bg-primary px-2 py-1 text-xs rounded">LASTİK TAMİRİ</span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1635334239823-3b683e60220d?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Yol Yardım Aracı">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="text-white font-bold bg-neonRed px-2 py-1 text-xs rounded">7/24 YOL YARDIM</span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1530046339160-711533e94405?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Atölye">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="text-white font-bold bg-blue-600 px-2 py-1 text-xs rounded">MOBİL SERVİS</span>
+                        </div>
+                    </div>
+
+                     <!-- Slide 4 -->
+                     <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1562259920-47afc305f369?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Lastik Sökme">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="text-white font-bold bg-primary px-2 py-1 text-xs rounded">LASTİK SÖKME</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Swipe Hint -->
+                <div class="text-center text-gray-500 text-sm md:hidden mt-2">
+                    <i class="fa-solid fa-arrows-left-right"></i> Kaydırmak için sürükleyin
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kategorili Galeri & About Combined -->
+    <section id="galeri" class="py-20 bg-cardBg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <!-- About Column -->
+                <div class="lg:w-1/3" id="hakkimizda">
+                    <h3 class="text-primary font-bold tracking-wider mb-4 text-xl">KURUMSAL</h3>
+                    <h2 class="text-4xl font-display font-bold text-white mb-6">MUHARREM PÜR <br> <span class="text-gray-400 text-2xl">OTO LASTİK YOL YARDIM</span></h2>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Antalya bölgesinde yılların verdiği tecrübe ile lastik tamiri, değişimi ve yol yardım hizmetleri sunuyoruz. 
+                        <strong>PÜR OTO LASTİK</strong> olarak önceliğimiz, yolda kalan müşterilerimizin güvenliğini sağlayıp en kısa sürede yola devam etmelerini sağlamaktır.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fa-solid fa-check text-green-500 mr-3"></i> Hızlı Servis (30-45 Dk)
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fa-solid fa-check text-green-500 mr-3"></i> 7/24 Ulaşılabilirlik
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fa-solid fa-check text-green-500 mr-3"></i> Uygun Fiyat Garantisi
+                        </li>
+                         <li class="flex items-center text-gray-300">
+                            <i class="fa-solid fa-check text-green-500 mr-3"></i> Son Teknoloji Ekipman
+                        </li>
+                    </ul>
+                    <a href="tel:+905307985540" class="inline-block w-full text-center bg-primary hover:bg-orange-700 text-white font-bold py-3 rounded-lg transition-colors">
+                        ARAYIN: 0530 798 55 40
+                    </a>
+                </div>
+
+                <!-- Gallery Grid Column -->
+                <div class="lg:w-2/3">
+                    <div class="flex gap-4 mb-6 overflow-x-auto pb-2">
+                        <button class="filter-btn active px-4 py-2 bg-primary text-white rounded-full text-sm font-bold whitespace-nowrap" onclick="filterGallery('all', this)">TÜMÜ</button>
+                        <button class="filter-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-full text-sm font-bold whitespace-nowrap" onclick="filterGallery('tamir', this)">LASTİK TAMİRİ</button>
+                        <button class="filter-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-full text-sm font-bold whitespace-nowrap" onclick="filterGallery('yolyardim', this)">YOL YARDIM</button>
+                        <button class="filter-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-full text-sm font-bold whitespace-nowrap" onclick="filterGallery('araclar', this)">ARAÇLARIMIZ</button>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
+                        <!-- Galeri Öğeleri -->
+                        <div class="gallery-item tamir group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                            <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Araba Lastiği">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item yolyardim group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                            <img src="https://images.unsplash.com/photo-1590130663673-c15c635df869?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Yol Yardım">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item araclar group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Lastik Değişim Aracı">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item tamir group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                            <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Lastik Tamiri Detay">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item yolyardim group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                            <img src="https://images.unsplash.com/photo-1517524285303-d6fc683dddf8?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Gece Yol Yardım">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item araclar group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                            <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Servis">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Müşteri Yorumları -->
+    <section class="py-16 bg-darkBg border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-center text-3xl font-display font-bold text-white mb-12">MUTLU MÜŞTERİLER</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gray-800 p-6 rounded-lg relative">
+                    <i class="fa-solid fa-quote-right absolute top-4 right-4 text-4xl text-gray-700"></i>
+                    <div class="flex text-yellow-400 mb-2">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">"Gece saat 3'te Konyaaltı tarafında lastiğim patladı. Muharrem Bey'i aradım, 20 dakikada geldi. İşçiliği çok temiz."</p>
+                    <p class="font-bold text-primary">- Ahmet K.</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-gray-800 p-6 rounded-lg relative">
+                    <i class="fa-solid fa-quote-right absolute top-4 right-4 text-4xl text-gray-700"></i>
+                    <div class="flex text-yellow-400 mb-2">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">"Pazar günü açık lastikçi bulmak zordu, Google'dan Pür Oto Lastik'i buldum. Güler yüzlü ve hızlı hizmet. Tavsiye ederim."</p>
+                    <p class="font-bold text-primary">- Mehmet Y.</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-gray-800 p-6 rounded-lg relative">
+                    <i class="fa-solid fa-quote-right absolute top-4 right-4 text-4xl text-gray-700"></i>
+                    <div class="flex text-yellow-400 mb-2">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-4">"Seyyar lastikçi hizmeti çok başarılı. Çekici çağırmadan yerinde işimi hallettiler. Fiyatlar da makul."</p>
+                    <p class="font-bold text-primary">- Serkan D.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim & Harita & Footer -->
+    <section id="iletisim" class="relative">
+        <!-- Map Overlay -->
+        <div class="h-96 w-full bg-gray-800 relative group">
+             <!-- Static Map Image for demo (Google Maps Embed would go here normally) -->
+             <iframe 
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101889.06648795856!2d30.60787365615637!3d36.91100554523533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c39aaeddad54be%3A0x6334f59846b9777f!2sAntalya!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+             width="100%" height="100%" style="border:0; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy"></iframe>
+             
+             <!-- Contact Info Card Floating over Map -->
+             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/90 p-8 rounded-xl border border-primary shadow-2xl w-11/12 md:w-auto text-center">
+                 <h3 class="text-2xl font-bold text-white mb-2">PÜR OTO LASTİK</h3>
+                 <p class="text-gray-400 mb-4">Antalya / Türkiye</p>
+                 <a href="tel:+905307985540" class="text-3xl font-display font-bold text-primary hover:text-white transition-colors block mb-2">
+                     0530 798 55 40
+                 </a>
+                 <div class="text-sm text-gray-500">Muharrem PÜR</div>
+             </div>
+        </div>
+
+        <footer class="bg-black text-white pt-12 pb-24 md:pb-8">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-truck-monster text-primary text-2xl"></i>
+                        <h4 class="font-bold text-xl">PÜR OTO LASTİK</h4>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Antalya'nın güvenilir yol yardım ve lastik servisi. 
+                        7 gün 24 saat hizmetinizdeyiz.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-primary">HİZMET BÖLGELERİ</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Muratpaşa</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Kepez</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Konyaaltı</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Lara</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Kundu</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Döşemealtı</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Aksu</span>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Serik</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-primary">İLETİŞİM</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fa-solid fa-phone mr-2 text-primary"></i> 0530 798 55 40</li>
+                        <li><i class="fa-solid fa-user mr-2 text-primary"></i> Muharrem PÜR</li>
+                        <li><i class="fa-solid fa-location-dot mr-2 text-primary"></i> Antalya, Türkiye</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-600 text-xs">
+                &copy; 2024 PÜR Oto Lastik Yol Yardım. Tüm hakları saklıdır.
+            </div>
+        </footer>
+    </section>
+
+    <!-- Floating Action Buttons (Sticky) -->
+    <div class="fixed bottom-4 left-4 right-4 z-40 flex justify-between md:justify-start md:gap-4 pointer-events-none">
+        <!-- WhatsApp (Left on Mobile, Left on Desktop) -->
+        <a href="https://wa.me/905307985540" target="_blank" class="pointer-events-auto flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 shadow-lg transition-transform hover:scale-110">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+        
+        <!-- Call (Right on Mobile, Next to WA on Desktop) -->
+        <a href="tel:+905307985540" class="pointer-events-auto flex items-center justify-center bg-primary hover:bg-orange-600 text-white rounded-full w-14 h-14 shadow-[0_0_15px_rgba(249,115,22,0.6)] animate-pulse-fast transition-transform hover:scale-110">
+            <i class="fa-solid fa-phone text-2xl"></i>
+        </a>
     </div>
-  </div>
-</section>
 
-<section id="yorumlar" class="section">
-  <h2>Müşteri Yorumları</h2>
-  <div id="yorumListesi" class="yorum-listesi"></div>
-  <form id="yorumForm" class="yorum-form">
-    <input id="ad" placeholder="Adınız">
-    <textarea id="yorum" placeholder="Yorumunuz"></textarea>
-    <button type="submit">Gönder</button>
-  </form>
-</section>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="absolute top-5 right-5 text-white text-4xl cursor-pointer hover:text-primary">&times;</span>
+        <img id="lightbox-img" src="" alt="Büyük Resim">
+    </div>
 
-<section id="iletisim" class="section">
-  <h2>İletişim</h2>
-  <p><strong>İsim:</strong> Muharrem PÜR</p>
-  <p><strong>Telefon:</strong> 90 530 798 55 40</p>
-  <p><strong>Konum:</strong> Antalya</p>
-</section>
+    <!-- Scripts -->
+    <script>
+        // --- Mobile Menu Toggle ---
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
 
-<script src="script.js"></script>
+        // --- Sticky Navbar Effect ---
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black', 'shadow-lg');
+                nav.classList.remove('bg-black/90');
+            } else {
+                nav.classList.remove('bg-black', 'shadow-lg');
+                nav.classList.add('bg-black/90');
+            }
+        });
+
+        // --- Gallery Filter Logic ---
+        function filterGallery(category, btn) {
+            // Update buttons
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('bg-primary', 'text-white');
+                b.classList.add('bg-gray-700', 'text-white');
+            });
+            btn.classList.remove('bg-gray-700');
+            btn.classList.add('bg-primary');
+
+            // Filter Items
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    setTimeout(() => item.style.opacity = '1', 50); // Fade in effect
+                } else {
+                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                }
+            });
+        }
+
+        // --- Slider Scroll Logic ---
+        function scrollSlider(direction) {
+            const container = document.getElementById('image-slider');
+            const scrollAmount = 300; // Pixel amount
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // --- Auto Scroll Slider ---
+        let autoScrollInterval;
+        function startAutoScroll() {
+            const container = document.getElementById('image-slider');
+            autoScrollInterval = setInterval(() => {
+                if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+                    container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: 300, behavior: 'smooth' });
+                }
+            }, 3000); // 3 seconds
+        }
+
+        // Stop auto scroll on interaction
+        document.getElementById('image-slider').addEventListener('touchstart', () => clearInterval(autoScrollInterval));
+        document.getElementById('image-slider').addEventListener('mouseover', () => clearInterval(autoScrollInterval));
+        
+        // Start on load
+        startAutoScroll();
+
+        // --- Lightbox Logic ---
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox(e) {
+            if (e.target !== document.getElementById('lightbox-img')) {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
 </body>
 </html>
