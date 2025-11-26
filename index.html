@@ -206,7 +206,7 @@
                 <!-- Service 1 -->
                 <div class="bg-cardBg rounded-xl overflow-hidden group hover:shadow-[0_0_30px_rgba(249,115,22,0.2)] transition-all duration-300 border border-gray-800 hover:border-primary">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1626074278453-6258d4a6df24?q=80&w=1000&auto=format&fit=crop" 
+                        <img src="images/master/1.jpg"
                              alt="Yerinde Lastik Tamiri" 
                              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute top-4 right-4 bg-primary text-white p-3 rounded-full shadow-lg z-10">
@@ -223,7 +223,7 @@
                 <!-- Service 2 -->
                 <div class="bg-cardBg rounded-xl overflow-hidden group hover:shadow-[0_0_30px_rgba(249,115,22,0.2)] transition-all duration-300 border border-gray-800 hover:border-primary">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1000&auto=format&fit=crop" 
+                        <img src="images/master/2.jpg"
                              alt="7/24 Yol Yardım" 
                              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute top-4 right-4 bg-neonRed text-white p-3 rounded-full shadow-lg z-10 animate-pulse">
@@ -240,7 +240,7 @@
                 <!-- Service 3 -->
                 <div class="bg-cardBg rounded-xl overflow-hidden group hover:shadow-[0_0_30px_rgba(249,115,22,0.2)] transition-all duration-300 border border-gray-800 hover:border-primary">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1632823469850-24d9c4939b67?q=80&w=1000&auto=format&fit=crop" 
+                        <img src="images/master/3.jpg"
                              alt="Sıfır ve İkinci El Lastik" 
                              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute top-4 right-4 bg-primary text-white p-3 rounded-full shadow-lg z-10">
@@ -298,36 +298,71 @@
                 <div id="image-slider" class="slider-container flex gap-4 overflow-x-auto px-4 pb-8 snap-x snap-mandatory hide-scrollbar">
                     
                     <!-- Slide 1 -->
+                    <!-- DİKKAT: 'images' klasörü içindeki resim adınızı buraya yazın -->
                     <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Lastik Değişimi">
+                        <img loading="lazy" src="images/1.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Mobil Lastik Değişimi">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
-                            <span class="text-white font-bold bg-primary px-2 py-1 text-xs rounded">LASTİK TAMİRİ</span>
+                            <span class="text-white font-bold bg-primary px-2 py-1 text-xs rounded">MOBİL SERVİS</span>
                         </div>
                     </div>
 
                     <!-- Slide 2 -->
+                    <!-- DİKKAT: Resim adını aşağıda 'src' içine yazın -->
                     <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1635334239823-3b683e60220d?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Yol Yardım Aracı">
+                        <img loading="lazy" src="images/2.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Çekici Hizmeti">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
-                            <span class="text-white font-bold bg-neonRed px-2 py-1 text-xs rounded">7/24 YOL YARDIM</span>
+                            <span class="text-white font-bold bg-neonRed px-2 py-1 text-xs rounded">YOL YARDIM</span>
                         </div>
                     </div>
 
                     <!-- Slide 3 -->
                     <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1530046339160-711533e94405?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Atölye">
+                        <img loading="lazy" src="images/3.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Yerinde Tamir">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
-                            <span class="text-white font-bold bg-blue-600 px-2 py-1 text-xs rounded">MOBİL SERVİS</span>
+                            <span class="text-white font-bold bg-blue-600 px-2 py-1 text-xs rounded">YERİNDE TAMİR</span>
                         </div>
                     </div>
 
                      <!-- Slide 4 -->
                      <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1562259920-47afc305f369?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Lastik Sökme">
+                        <img loading="lazy" src="images/4.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Gece Yol Yardım">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
-                            <span class="text-white font-bold bg-primary px-2 py-1 text-xs rounded">LASTİK SÖKME</span>
+                            <span class="text-white font-bold bg-neonRed px-2 py-1 text-xs rounded">7/24 HİZMET</span>
                         </div>
                     </div>
+
+                    <!-- Slide 5 -->
+                    <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
+                        <img loading="lazy" src="images/5.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Oto Kurtarma">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="text-white font-bold bg-primary px-2 py-1 text-xs rounded">ÇEKİCİ</span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
+                        <img loading="lazy" src="images/6.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Lastik Detay">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="text-white font-bold bg-blue-600 px-2 py-1 text-xs rounded">LASTİK İŞLERİ</span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
+                        <img loading="lazy" src="images/7.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Yol Yardım Transfer">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="text-white font-bold bg-neonRed px-2 py-1 text-xs rounded">OTO KURTARMA</span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 -->
+                    <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
+                        <img loading="lazy" src="images/8.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Acil Müdahale">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="text-white font-bold bg-primary px-2 py-1 text-xs rounded">ACİL MÜDAHALE</span>
+                        </div>
+                    </div>
+
                 </div>
                 <!-- Mobile Swipe Hint -->
                 <div class="text-center text-gray-500 text-sm md:hidden mt-2">
@@ -381,42 +416,42 @@
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
                         <!-- Galeri Öğeleri -->
                         <div class="gallery-item tamir group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                            <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Araba Lastiği">
+                            <img src="images/1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Araba Lastiği">
                             <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
                             </div>
                         </div>
 
                         <div class="gallery-item yolyardim group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                            <img src="https://images.unsplash.com/photo-1590130663673-c15c635df869?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Yol Yardım">
+                            <img src="images/2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Yol Yardım">
                             <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
                             </div>
                         </div>
 
                         <div class="gallery-item araclar group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Lastik Değişim Aracı">
+                            <img src="images/3.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Lastik Değişim Aracı">
                             <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
                             </div>
                         </div>
 
                         <div class="gallery-item tamir group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                            <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Lastik Tamiri Detay">
+                            <img src="images/4.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Lastik Tamiri Detay">
                             <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
                             </div>
                         </div>
 
                         <div class="gallery-item yolyardim group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                            <img src="https://images.unsplash.com/photo-1517524285303-d6fc683dddf8?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Gece Yol Yardım">
+                            <img src="images/5.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Gece Yol Yardım">
                             <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
                             </div>
                         </div>
 
                         <div class="gallery-item araclar group relative aspect-square rounded-lg overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
-                            <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Servis">
+                            <img src="images/6.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Servis">
                             <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
                             </div>
@@ -518,7 +553,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-gray-600 text-xs">
-                &copy; 2024 PÜR Oto Lastik Yol Yardım. Tüm hakları saklıdır.
+                &copy; 2025 PÜR Oto Lastik Yol Yardım. Tüm hakları saklıdır.
             </div>
         </footer>
     </section>
