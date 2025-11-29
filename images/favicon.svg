@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Turuncu Arkaplan Daire (Lastik) -->
+  <circle cx="256" cy="256" r="240" fill="#f97316" stroke="black" stroke-width="20"/>
+  
+  <!-- İç Siyah Daire (Jant) -->
+  <circle cx="256" cy="256" r="160" fill="#0f0f0f" stroke="#f97316" stroke-width="10"/>
+
+  <!-- "P" Harfi (PÜR Baş Harfi) -->
+  <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-family="Arial, sans-serif" font-weight="bold" font-size="200" fill="#f97316">P</text>
+  
+  <!-- Lastik Dişleri (Dekoratif Çizgiler) -->
+  <g stroke="#f97316" stroke-width="15" stroke-linecap="round">
+    <line x1="256" y1="20" x2="256" y2="60" />
+    <line x1="256" y1="452" x2="256" y2="492" />
+    <line x1="20" y1="256" x2="60" y2="256" />
+    <line x1="452" y1="256" x2="492" y2="256" />
+  </g>
+</svg>
