@@ -3,10 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PÜR Oto Lastik Yol Yardım | Antalya 7/24 Açık Lastikçi</title>
-    <meta name="description" content="Antalya PÜR Oto Lastik Yol Yardım. 7/24 Acil Lastikçi, Yerinde Lastik Değişimi, Akü Takviye. Muharrem PÜR güvencesiyle. Muratpaşa, Kepez, Konyaaltı, Lara, Kundu tüm ilçelere hizmet.">
-    <meta name="keywords" content="antalya lastikçi, antalya yol yardım, pür oto lastik, muharrem pür, kepez lastikçi, muratpaşa lastikçi, konyaaltı lastikçi, 7/24 açık lastikçi, seyyar lastikçi">
+    
+    <!-- 1. Temel SEO ve Sayfa Kimliği -->
+    <title>PÜR Oto Lastik Yol Yardım | Antalya 7/24 En Yakın Lastikçi</title>
+    <meta name="description" content="Antalya PÜR Oto Lastik Yol Yardım. 7/24 Acil Lastikçi, Yerinde Lastik Değişimi, Akü Takviye. Muratpaşa, Kepez, Konyaaltı, Lara bölgelerinde 30 dakikada yanınızdayız. Hemen arayın!">
+    <meta name="keywords" content="antalya lastikçi, antalya yol yardım, pür oto lastik, en yakın lastikçi, kepez lastikçi, muratpaşa lastikçi, konyaaltı lastikçi, 7/24 açık lastikçi, seyyar lastikçi, mobil lastik tamiri">
     <meta name="author" content="Muharrem PÜR">
+    <meta name="robots" content="index, follow"> <!-- Google'a siteyi taraması için izin ver -->
+    
+    <!-- Canonical URL (Sitenin yayınlandığı gerçek adresi buraya yazmalısın, örn: https://www.purotolastik.com) -->
+    <link rel="canonical" href="https://www.purotolastik.com" />
+
+    <!-- 2. Yerel SEO (Local SEO) - Antalya Koordinatları -->
+    <meta name="geo.region" content="TR-07" />
+    <meta name="geo.placename" content="Antalya" />
+    <meta name="geo.position" content="36.8969;30.7133" />
+    <meta name="ICBM" content="36.8969, 30.7133" />
+
+    <!-- 3. Sosyal Medya Paylaşım Kartları (Open Graph) -->
+    <!-- WhatsApp ve Facebook'ta paylaşınca çıkacak başlık ve resim -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="PÜR Oto Lastik Yol Yardım | Antalya 7/24">
+    <meta property="og:url" content="https://www.purotolastik.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1578844251758-2f71da645217?q=80&w=2070"> <!-- Paylaşımda çıkacak kapak resmi -->
+    <meta property="og:description" content="Yolda mı kaldınız? Antalya geneli 7/24 acil lastik yol yardım hizmeti. 30 dakikada yanınızdayız. Muharrem PÜR: 0530 798 55 40">
+    <meta property="og:site_name" content="PÜR Oto Lastik">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- 4. Favicon (Tarayıcı sekmesindeki ikon) -->
+    <!-- Kendine ait bir logon varsa 'favicon.ico' veya 'favicon.png' olarak images klasörüne atıp burayı açabilirsin -->
+    <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+    <!-- 5. Yapısal Veri (Schema.org) - Google İşletme Kimliği -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "PÜR Oto Lastik Yol Yardım",
+      "image": "https://images.unsplash.com/photo-1578844251758-2f71da645217?q=80&w=2070",
+      "@id": "https://www.purotolastik.com",
+      "url": "https://www.purotolastik.com",
+      "telephone": "+905307985540",
+      "priceRange": "₺₺",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Antalya",
+        "addressRegion": "Antalya",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.8969,
+        "longitude": 30.7133
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://www.instagram.com/purotolastik", 
+        "https://www.facebook.com/purotolastik"
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Antalya"
+        },
+        {
+          "@type": "City",
+          "name": "Muratpaşa"
+        },
+        {
+          "@type": "City",
+          "name": "Kepez"
+        },
+        {
+          "@type": "City",
+          "name": "Konyaaltı"
+        },
+        {
+            "@type": "City",
+            "name": "Lara"
+        },
+        {
+            "@type": "City",
+            "name": "Kundu"
+        }
+      ]
+    }
+    </script>
     
     <!-- Tailwind CSS (Modern Stil Altyapısı) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -298,7 +393,6 @@
                 <div id="image-slider" class="slider-container flex gap-4 overflow-x-auto px-4 pb-8 snap-x snap-mandatory hide-scrollbar">
                     
                     <!-- Slide 1 -->
-                    <!-- DİKKAT: 'images' klasörü içindeki resim adınızı buraya yazın -->
                     <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
                         <img loading="lazy" src="images/1.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Mobil Lastik Değişimi">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
@@ -307,7 +401,6 @@
                     </div>
 
                     <!-- Slide 2 -->
-                    <!-- DİKKAT: Resim adını aşağıda 'src' içine yazın -->
                     <div class="slide-item min-w-[85vw] md:min-w-[400px] h-[300px] relative rounded-xl overflow-hidden cursor-pointer neon-border" onclick="openLightbox(this.querySelector('img').src)">
                         <img loading="lazy" src="images/2.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Çekici Hizmeti">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
@@ -553,7 +646,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-gray-600 text-xs">
-                &copy; 2025 PÜR Oto Lastik Yol Yardım. Tüm hakları saklıdır.
+                &copy; 2024 PÜR Oto Lastik Yol Yardım. Tüm hakları saklıdır.
             </div>
         </footer>
     </section>
